@@ -2,6 +2,10 @@
      box-sizing: border-box;
 }
 
+html {
+     scroll-behavior: smooth;
+}
+
 html, body{
      height: 100%;
      padding: 0;
@@ -18,7 +22,7 @@ body{
 /* Header */
 
 .first_section {
-     
+     position: relative;
 }
 
 .logo{
@@ -86,45 +90,76 @@ body{
 }
 
 .header_container {
-     position: relative;
+     
 }
 
 /* humburger menu */
-.navigation_div .toggle-button {
+.toggle-button {
      display: flex;
      flex-direction: column;
      position: absolute;
-     top: 4rem;
-     right: 6rem;
+     top: 3px;
+     right: 2rem;
      cursor: pointer;
 }
 
-.navigation_div .toggle-button > span {
+.toggle-button > span {
      width: 30px;
      height: 4px;
      background-color: white;
      display: none;
      margin: 2px 0;
-     position: relative;
+     
 }
 
 .hamburger_menu {
      position: absolute;
-     top: 2rem;
-     right: 3rem;
+     background-color: white;
+     top: 3rem;
+     bottom: auto;
+     right: 1rem;
+     width: 13rem;
      display: none;
+     border-radius: 10px;
+}
+
+.hamburger_menu ul {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     padding: 0;
+     margin: 0;
+     /*border: 1px solid black;*/
+     list-style: none;
+}
+
+.hamburger_menu ul li {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 0;
+     /*border: 1px solid black;*/
+     height: 55px;
+     width: 100%;
+
+}
+
+.hamburger_menu ul li:hover {
+     background-color: rgba(0, 0, 0, .1);
+     cursor: pointer;
 }
 
 @media (max-width: 1000px) {
      .navbar {
           display: none;
      }
-     .navigation_div .toggle-button span {
+     .toggle-button span {
           display: flex;
      }
-     .hamburger_menu.active {
+     .hamburger_menu.active{
           display: flex;
      }
+     
 }
 
 /* dropdown buttons */
@@ -1381,4 +1416,26 @@ body{
 .copyrights_div i:hover {
      cursor: pointer;
      color: rgba(255, 255, 255, .6);
+}
+
+/* scroll up button */
+.scroll_up_button {
+     all: unset;
+     position: fixed;
+     bottom: 3%;
+     right: 2%;
+     width: 50px;
+     height: 55px;
+     background-color: rgba(35, 35, 35, .65);
+     color: white;
+     z-index: 99;
+     cursor: pointer;
+     border-radius: 4px;
+     display: none;
+     justify-content: center;
+     align-items: center;
+}
+
+.scroll_up_button:hover {
+     background-color: rgba(35, 35, 35, .8);
 }
